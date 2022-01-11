@@ -23,7 +23,7 @@ ruleset hello_world {
   rule monkey {
     select when echo monkey
     pre {
-      name = event:attr("name");
+      name = event:attrs{"name"};
     }
     
     send_directive("say", {"something":"Hello Monkey" || "Hello" + name })
