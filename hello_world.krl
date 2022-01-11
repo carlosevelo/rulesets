@@ -23,10 +23,10 @@ ruleset hello_world {
   rule monkey {
     select when echo monkey
     pre {
-      name = event:attrs{"name"};
+      phrase = (event:attrs{"name"}) => "Hello" + event:attrs{"name"} | "Hello Monkey";
     }
     
-    send_directive("say", {"something":"Hello Monkey" || "Hello" + name })
+    send_directive("say", {"something": phrase })
 
   }
 
