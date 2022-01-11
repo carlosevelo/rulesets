@@ -28,12 +28,12 @@ ruleset hello_world {
     if event:attr("name") then
       send_directive("say", {"something":"Hello" || name })
     notfired {
-      raise explicit event monkey
+      raise explicit event say_monkey
     }
   }
 
   rule when_false {
-    select when explicit monkey
+    select when explicit say_monkey
     send_directive("say", {"something":"Hello Monkey"});
   }
 }
