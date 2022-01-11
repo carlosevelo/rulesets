@@ -25,15 +25,9 @@ ruleset hello_world {
     pre {
       name = event:attr("name");
     }
-    if event:attr("name") then
-      send_directive("say", {"something":"Hello" || name })
-    notfired {
-      raise explicit event say_monkey
-    }
+    
+    send_directive("say", {"something":"Hello Monkey" || "Hello" + name })
+
   }
 
-  rule when_false {
-    select when explicit say_monkey
-    send_directive("say", {"something":"Hello Monkey"});
-  }
 }
