@@ -19,7 +19,7 @@ ruleset twilio.sdk {
         auth = {
           "username":"#{SID}",
           "password":"#{authToken}"
-        })
+        }) setting(response)
       return response
     }
   }
