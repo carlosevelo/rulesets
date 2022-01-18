@@ -15,11 +15,9 @@ ruleset twilio {
   rule sendMessage {
     select when twilio new_Message
     pre {
-      msgto = event:attr("to")
-      msgFrom = event:attr("from")
       msgBody = event:attr("body")
     }
-    if msgto && msgFrom && msgBody then
+    if msgBody then
       twilioMod:sendMessage(msgto, msgFrom, msgBody)
 
   }
