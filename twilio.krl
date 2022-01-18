@@ -4,7 +4,6 @@ ruleset twilio {
       with 
         SID = keys:rulesetConfig{"sid"}
         authToken = keys:rulesetConfig{"auth_Token"}
-
     shares messages
   }
   global {
