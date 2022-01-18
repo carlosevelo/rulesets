@@ -18,7 +18,7 @@ ruleset twilio {
       msgBody = event:attr("body")
     }
     if msgBody then
-      twilioMod:sendMessage(msgto, msgFrom, msgBody)
+      twilioMod:sendMessage(msgBody)
 
   }
 }
