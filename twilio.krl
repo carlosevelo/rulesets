@@ -2,8 +2,8 @@ ruleset twilio {
   meta {
     use module twilio.sdk alias sdk
       with 
-        SID = keys:rulesetConfig{"sid"}
-        authToken = keys:rulesetConfig{"auth_Token"}
+        SID = meta:rulesetConfig{"sid"}
+        authToken = meta:rulesetConfig{"auth_Token"}
     shares messages
   }
   global {
