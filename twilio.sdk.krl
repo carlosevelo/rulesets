@@ -11,7 +11,7 @@ ruleset twilio.sdk {
     getMessages = function(pageSize="", From="", To="") {
       authentication = {"username":SID,"password":authToken}
       form = {"PageSize":pageSize, "From":From, "To":To}
-      http:get(<<#{base_url}/#{SID}/Messages.json>>, auth = authentication).decode()
+      http:get(<<#{base_url}/#{SID}/Messages.json>>, auth = authentication, form=form).decode()
     }
 
     sendMessage = defaction(Body) {
