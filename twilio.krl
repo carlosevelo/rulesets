@@ -8,7 +8,7 @@ ruleset twilio {
   }
   global {
     getMessages = function() {
-      sdk:getMessages()
+      sdk:getMessages(query:attr("page size"), query:attr("to"), query:attr("from"))
     }
   }
 
