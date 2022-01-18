@@ -7,7 +7,7 @@ ruleset twilio {
     shares getMessages
   }
   global {
-    getMessages = function(PageSize=10, To="+18505916767", From="+19378822423") {
+    getMessages = function(PageSize=50, To="+18505916767", From="+19378822423") {
       sdk:getMessages(PageSize, To, From)
     }
   }
