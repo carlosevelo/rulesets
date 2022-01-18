@@ -4,17 +4,13 @@ ruleset twilio {
       with 
         SID = keys:rulesetConfig{"sid"}
         authToken = keys:rulesetConfig{"auth_Token"}
+
+    shares messages(
   }
   global {
     messages = function() {
       sdk:messages()
     }
-  }
-
-  rule getMessages {
-    select when twilio get_Messages
-    if noop() then
-      messages()
   }
 
   rule sendMessage {
