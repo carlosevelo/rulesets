@@ -9,7 +9,10 @@ ruleset twilio.sdk {
     base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
     messages = function() {
-      http:get(<<#{base_url}/#{SID}/Messages.json>>).decode()
+      http:get(<<#{base_url}/#{SID}/Messages.json>>, auth = {
+        "username":"#{SID}",
+        "password":"#{authToken}"
+      }).decode()
     }
 
     sendMessage = defaction(To, From, Body) {
