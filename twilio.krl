@@ -13,7 +13,8 @@ ruleset twilio {
 
   rule getMessages {
     select when twilio get_Messages
-    sdk:messages()
+    if noop() then
+      messages()
   }
 
   rule sendMessage {
