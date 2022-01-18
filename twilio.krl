@@ -1,13 +1,13 @@
 ruleset twilio {
   meta {
-    use module twilio.sdk
+    use module twilio.sdk alias sdk
       with 
         SID = keys:rulesetConfig{"sid"}
         authToken = keys:rulesetConfig{"auth_Token"}
   }
   global {
     messages = function() {
-      twilioMod.messages()
+      sdk:messages()
     }
   }
 
