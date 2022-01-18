@@ -8,8 +8,9 @@ ruleset twilio.sdk {
   global {
     base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
-    getMessages = function() {
+    getMessages = function(pageSize="", From="", To="") {
       authentication = {"username":SID,"password":authToken}
+      form = {"PageSize":pageSize, "From":From, "To":To}
       http:get(<<#{base_url}/#{SID}/Messages.json>>, auth = authentication).decode()
     }
 
