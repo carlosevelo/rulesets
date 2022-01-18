@@ -8,7 +8,7 @@ ruleset twilio.sdk {
   global {
     base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
-    getMessages = function(pageSize, To, From) {
+    getMessages = function(pageSize=50, To="+18505916767", From="+19378822423") {
       authentication = {"username":SID,"password":authToken}
       qs = {"PageSize":pageSize, "From":From, "To":To}
       
