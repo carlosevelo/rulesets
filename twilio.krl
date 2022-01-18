@@ -4,7 +4,7 @@ ruleset twilio {
       with 
         SID = meta:rulesetConfig{"sid"}
         authToken = meta:rulesetConfig{"auth_Token"}
-    shares gwtMessages
+    shares getMessages
   }
   global {
     getMessages = function() {
