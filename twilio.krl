@@ -5,7 +5,7 @@ ruleset twilio {
         SID = keys:rulesetConfig{"sid"}
         authToken = keys:rulesetConfig{"auth_Token"}
 
-    shares messages(
+    shares messages
   }
   global {
     messages = function() {
