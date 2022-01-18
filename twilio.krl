@@ -7,8 +7,8 @@ ruleset twilio {
     shares getMessages
   }
   global {
-    getMessages = function() {
-      sdk:getMessages()
+    getMessages = function(pageSize, To, From) {
+      sdk:getMessages(pageSize, To, From)
     }
   }
 
