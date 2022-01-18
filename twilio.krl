@@ -8,7 +8,7 @@ ruleset twilio {
   }
   global {
     getMessages = function() {
-      sdk:messages()
+      sdk:getMessages()
     }
   }
 
