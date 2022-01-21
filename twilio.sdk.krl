@@ -11,9 +11,9 @@ ruleset twilio.sdk {
     getMessages = function(PageSize=50, To="+18505916767", From="+19378822423") {
       authentication = {"username":SID,"password":authToken}
 
-      PageSize = (PageSize == "") => 50 | PageSize
+      PageSizeFinal = (PageSize == "") => 50 | PageSize
         
-      qs = {"PageSize":PageSize, "From":From, "To":To}
+      qs = {"PageSize":PageSizeFinal, "From":From, "To":To}
       
       http:get(<<#{base_url}/#{SID}/Messages.json>>, auth = authentication, qs=qs).decode()
     }
