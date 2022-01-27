@@ -35,7 +35,7 @@ ruleset wovyn_base {
   rule find_high_temps {
     select when wovyn new_temperature_reading
     pre {
-      temp = event:attr("temperature")
+      temp = event:attr("temperature").klog("Temperature: ")
       violation = temp > temperature_threshold
     }
 
