@@ -18,7 +18,7 @@ ruleset wovyn_base {
   }
 
   rule process_heartbeat {
-    select when wovyn heartbeat where genericThing
+    select when wovyn heartbeat where "genericThing"
     pre {
       temp = event:attr("genericThing"){"data"}{"temperature"}[0]{"temperatureF"}
       timestamp = time:now()
